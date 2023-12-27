@@ -7,19 +7,25 @@ import java.util.TreeMap;
 
 public final class CliPixelToolbox {
     private static final ArrayList<CliPixel> PIXELS = new ArrayList<>(List.of(
-            new CliPixel("\u001B[30m", new Color(0, 0, 0)),
-            new CliPixel("\u001B[31m", new Color(255, 0, 0)),
-            new CliPixel("\u001B[32m", new Color(0, 255, 0)),
-            new CliPixel("\u001B[33m", new Color(255, 255, 0)),
-            new CliPixel("\u001B[34m", new Color(0, 0, 255)),
-            new CliPixel("\u001B[35m", new Color(255, 0, 255)),
-            new CliPixel("\u001B[36m", new Color(0, 255, 255)),
-            new CliPixel("\u001b[37m", new Color(255, 255, 255))
+            new CliPixel("\u001b[40m", new Color(0, 0, 0)),
+            new CliPixel("\u001b[41m", new Color(255, 0, 0)),
+            new CliPixel("\u001b[42m", new Color(0, 255, 0)),
+            new CliPixel("\u001b[43m", new Color(255, 255, 0)),
+            new CliPixel("\u001b[44m", new Color(0, 0, 255)),
+            new CliPixel("\u001b[45m", new Color(255, 0, 255)),
+            new CliPixel("\u001b[46m", new Color(0, 255, 255)),
+            new CliPixel("\u001b[47m", new Color(255, 255, 255))
     ));
+
+    private static final String RESET = "\u001b[0m";
 
     private static final Printable BREAK_LINE = System.out::println;
 
     private CliPixelToolbox() {
+    }
+
+    public static String reset() {
+        return RESET;
     }
 
     public static Printable breakLine() {

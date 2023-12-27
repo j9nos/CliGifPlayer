@@ -7,7 +7,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.concurrent.Executors;
 
 public class CliGif {
     private static final long SLEEP = 100;
@@ -33,8 +32,8 @@ public class CliGif {
         }
     }
 
-    private Runnable displayFrames() {
-        return () -> {
+    public void play() {
+        while (true) {
             for (final CliFrame frame : frames) {
                 frame.print();
                 try {
@@ -43,11 +42,7 @@ public class CliGif {
                 }
                 CliFrame.clear();
             }
-        };
-    }
-
-    public void play() {
-        Executors.newSingleThreadExecutor().execute(displayFrames());
+        }
     }
 
 }
