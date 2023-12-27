@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 
-public final class PixelCache {
+public final class CliPixelToolbox {
     private static final ArrayList<CliPixel> PIXELS = new ArrayList<>(List.of(
             new CliPixel("\u001B[30m", new Color(0, 0, 0)),
             new CliPixel("\u001B[31m", new Color(255, 0, 0)),
@@ -19,7 +19,7 @@ public final class PixelCache {
 
     private static final Printable BREAK_LINE = System.out::println;
 
-    private PixelCache() {
+    private CliPixelToolbox() {
     }
 
     public static Printable breakLine() {

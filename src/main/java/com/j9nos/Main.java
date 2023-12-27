@@ -11,9 +11,6 @@ public final class Main {
 
     public static void main(final String[] args) throws IOException, InterruptedException {
         final CliGif cliGif = new CliGif(args[0]);
-        final int maxLoop = Integer.parseInt(args[1]);
-        for (int i = 0; i < maxLoop; i++) {
-            cliGif.play();
-        }
+        cliGif.play();
     }
 }
